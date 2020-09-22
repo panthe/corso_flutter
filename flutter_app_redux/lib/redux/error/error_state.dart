@@ -2,28 +2,45 @@ import 'package:flutter/material.dart';
 
 @immutable
 class ErrorState {
+  final bool isShowing;
   final String code;
   final String description;
 
   ErrorState({
+    this.isShowing,
     this.code,
     this.description
   });
 
   ErrorState copyWith({
-    String errorCode,
-    String errorDescription
+    bool isShowing,
+    String code,
+    String description
   }){
     return ErrorState(
-      code: errorCode ?? code ,
-      description: errorDescription ?? description
+      isShowing: isShowing ?? this.isShowing ,
+      code: code ?? this.code ,
+      description: description ?? this.description
     );
   }
 
   factory ErrorState.initial() {
     return ErrorState(
-        code: null,
-        description: null
+      isShowing: false,
+      code: null,
+      description: null
     );
   }
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ErrorState &&
+          runtimeType == other.runtimeType &&
+          isShowing == other.isShowing &&
+          code == other.code &&
+          description == other.description;
+
+  @override
+  int get hashCode => isShowing.hashCode ^ code.hashCode ^ description.hashCode;
 }

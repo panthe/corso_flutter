@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
-class ShowError {
+class SetError {
+  final bool isShowing;
   final String code;
   final String description;
 
-  ShowError({
+  SetError({
+    @required this.isShowing,
     @required this.code,
     @required this.description,
   });

@@ -4,15 +4,16 @@ import 'package:flutter_app_redux/redux/error/error_actions.dart';
 
 final errorReducer = combineReducers<ErrorState>(
   [
-    TypedReducer<ErrorState, ShowError> (_showing),
+    TypedReducer<ErrorState, SetError> (_setting),
     TypedReducer<ErrorState, DismissError> (_dismiss),
   ]
 );
 
-ErrorState _showing(ErrorState state, ShowError action) {
+ErrorState _setting(ErrorState state, SetError action) {
   return state.copyWith(
-    errorCode: action.code,
-    errorDescription: action.description
+    isShowing: action.isShowing,
+    code: action.code,
+    description: action.description
   );
 }
 

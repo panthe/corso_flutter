@@ -1,3 +1,4 @@
+import 'package:flutter_app_redux/redux/user/user_middleware.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_logging/redux_logging.dart';
 import 'package:flutter_app_redux/redux/app/app_state.dart';
@@ -10,6 +11,7 @@ Store<AppState> createStore() {
     initialState: AppState.initial(),
     middleware: []
       ..add(createErrorMiddleware())
+      ..add(createUserMiddleware())
       ..add(LoggingMiddleware.printer())
   );
 }

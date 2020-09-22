@@ -1,41 +1,29 @@
 import 'dart:convert';
 
-class User {
+import 'package:flutter_app_redux/interfaces/with_error.dart';
+import 'package:flutter_app_redux/models/info.dart';
+import 'package:flutter_app_redux/models/result.dart';
+
+class User extends WithError {
   User({
-    this.title,
-    this.first,
-    this.last,
+    this.results,
+    this.info,
   });
 
-  String title;
-  String first;
-  String last;
+  List<Result> results;
+  Info info;
 
   factory User.fromRawJson(String str) => User.fromJson(json.decode(str));
 
   String toRawJson() => json.encode(toJson());
 
   factory User.fromJson(Map<String, dynamic> json) => User(
-    title: json["title"],
-    first: json["first"],
-    last: json["last"],
+    results: List<Result>.from(json["results"].map((x) => Result.fromJson(x))),
+    info: Info.fromJson(json["info"]),
   );
 
   Map<String, dynamic> toJson() => {
-    "title": title,
-    "first": first,
-    "last": last,
+    "results": List<dynamic>.from(results.map((x) => x.toJson())),
+    "info": info.toJson(),
   };
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is User &&
-          runtimeType == other.runtimeType &&
-          title == other.title &&
-          first == other.first &&
-          last == other.last;
-
-  @override
-  int get hashCode => title.hashCode ^ first.hashCode ^ last.hashCode;
 }

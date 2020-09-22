@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_redux/widgets/error_notifier.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:flutter_app_redux/redux/store.dart';
@@ -9,11 +10,17 @@ import 'package:flutter_app_redux/ui/splash_page.dart';
 import 'package:flutter_app_redux/redux/app/app_state.dart';
 
 void main() {
-  runApp(MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+
+  final Store<AppState> store = createStore();
+
+  runApp(MyApp(store: store));
 }
 
 class MyApp extends StatelessWidget {
-  final Store<AppState> store = createStore();
+  final Store<AppState> store;
+
+  MyApp({this.store});
 
   @override
   Widget build(BuildContext context) {
@@ -30,12 +37,14 @@ class MyApp extends StatelessWidget {
           HomeRoute: (context) => HomePage(),
           SplashRoute: (context) => SplashPage(),
         },
-        builder: (context,child) {
+        builder: (context, child) {
           return Scaffold(
             key: scaffoldKey,
             appBar: null,
             body: SafeArea(
-              child: child,
+              child: ErrorNotifier(
+                child: child
+              ),
             ),
           );
         },
