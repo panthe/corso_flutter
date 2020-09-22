@@ -164,6 +164,20 @@
             </list>
           </value>
         </entry>
+        <entry key="firebase_crashlytics">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/firebase_crashlytics-0.2.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="firebase_crashlytics_platform_interface">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/firebase_crashlytics_platform_interface-1.0.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="flutter">
           <value>
             <list>
@@ -197,7 +211,7 @@
         <entry key="flutter_web_plugins">
           <value>
             <list>
-              <option value="$USER_HOME$/fvm/versions/stable/packages/flutter_web_plugins/lib" />
+              <option value="$USER_HOME$/fvm/versions/beta/packages/flutter_web_plugins/lib" />
             </list>
           </value>
         </entry>
@@ -400,6 +414,8 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.5.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/firebase_core_platform_interface-2.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-0.2.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/firebase_crashlytics-0.2.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/firebase_crashlytics_platform_interface-1.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/flutter_redux-0.6.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/http-0.12.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/http_parser-3.1.4/lib" />
@@ -436,11 +452,11 @@
       <root url="file://$USER_HOME$/fvm/versions/beta/bin/cache/pkg/sky_engine/lib" />
       <root url="file://$USER_HOME$/fvm/versions/beta/packages/flutter/lib" />
       <root url="file://$USER_HOME$/fvm/versions/beta/packages/flutter_test/lib" />
+      <root url="file://$USER_HOME$/fvm/versions/beta/packages/flutter_web_plugins/lib" />
       <root url="file://$USER_HOME$/fvm/versions/stable/bin/cache/pkg/sky_engine/lib" />
       <root url="file://$USER_HOME$/fvm/versions/stable/packages/flutter/lib" />
       <root url="file://$USER_HOME$/fvm/versions/stable/packages/flutter_localizations/lib" />
       <root url="file://$USER_HOME$/fvm/versions/stable/packages/flutter_test/lib" />
-      <root url="file://$USER_HOME$/fvm/versions/stable/packages/flutter_web_plugins/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
