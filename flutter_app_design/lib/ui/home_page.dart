@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_design/api/user_service.dart';
 import 'package:flutter_app_design/global/keys.dart';
-import 'package:flutter_app_design/models/dob.dart';
-import 'package:flutter_app_design/models/name.dart';
-import 'package:flutter_app_design/models/result.dart';
+import 'package:flutter_app_design/lang/localization.dart';
 import 'package:flutter_app_design/models/top_level.dart';
 import 'package:flutter_app_design/widgets/card_obj.dart';
 import 'package:flutter_app_design/widgets/circle_button.dart';
@@ -44,9 +42,9 @@ class _HomePageState extends State<HomePage> {
       overflow: Overflow.visible,
       children: [
         CardObj(
-          title: "Titolo",
-          subTitle: "Sotto Titolo",
-          description: "Descrizione breve",
+          title: Localization.of(Keys.scaffoldKey.currentContext).trans("title"),
+          subTitle: Localization.of(Keys.scaffoldKey.currentContext).trans("subTitle"),
+          description: Localization.of(Keys.scaffoldKey.currentContext).trans("description"),
         ),
         Positioned(
           top: -40.0,
