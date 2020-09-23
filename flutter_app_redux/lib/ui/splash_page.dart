@@ -13,7 +13,7 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     super.initState();
     Future.delayed(
-      const Duration(seconds:3),
+      const Duration(seconds:8),
         () => Navigator.pushReplacementNamed(
         context,
         HomeRoute
@@ -23,7 +23,44 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Text("Splash");
+    return Container(
+      height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(
+          gradient: RadialGradient(
+            colors: [
+              Colors.white,
+              Colors.grey,
+              Colors.black
+            ]
+          )
+      ),
+      child: Center(
+        child: Container(
+          height: 150.0,
+          width: 150.0,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: Colors.white,
+            border: Border.all(
+              color: Colors.black,
+              width: 3.0
+            )
+          ),
+          child: Center(
+            child: Text(
+              "Redux\nDemo",
+              style: TextStyle(
+                color: Colors.purple,
+                fontSize: 24.0,
+                fontWeight: FontWeight.bold
+              ),
+              textAlign: TextAlign.center,
+            ),
+          )
+        ),
+      ),
+    );
   }
 
 }
