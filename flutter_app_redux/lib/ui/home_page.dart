@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
     return Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
-      margin: EdgeInsets.all(10.0),
+      margin: const EdgeInsets.all(10.0),
       decoration: BoxDecoration(
         color: Colors.grey.withOpacity(0.6),
         border: Border.all(
@@ -59,11 +59,11 @@ class HomePage extends StatelessWidget {
                     minWidth: 80.0,
                     padding: const EdgeInsets.all(5.0),
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5.0),
-                        side: BorderSide(
-                          color: Colors.black,
-                          width: 2.0
-                        )
+                      borderRadius: BorderRadius.circular(5.0),
+                      side: BorderSide(
+                        color: Colors.black,
+                        width: 2.0
+                      )
                     ),
                     onPressed: () => { store.dispatch(FetchUser()) },
                     color: Colors.yellow,

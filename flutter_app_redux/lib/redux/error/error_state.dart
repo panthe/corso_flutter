@@ -43,4 +43,20 @@ class ErrorState {
 
   @override
   int get hashCode => isShowing.hashCode ^ code.hashCode ^ description.hashCode;
+
+  static ErrorState fromJson(Map<String, dynamic> json) {
+
+
+    return (json == null) ? ErrorState.initial() : ErrorState(
+      isShowing: json["isShowing"],
+      code: json["code"],
+      description: json["description"],
+    );
+  }
+
+  Map<String, dynamic> toJson() => {
+    'isShowing': this.isShowing,
+    'code': this.code,
+    'description': this.description,
+  };
 }

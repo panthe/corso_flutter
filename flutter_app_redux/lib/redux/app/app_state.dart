@@ -28,4 +28,19 @@ class AppState {
       userState: userState
     );
   }
+
+  static AppState fromJson(Map<String, dynamic> json) {
+    ErrorState errorState = (json == null) ? ErrorState.initial() : ErrorState.fromJson(json["errorState"]);
+    UserState userState = (json == null) ? UserState.initial() : UserState.fromJson(json["userState"]);
+
+    return AppState(
+      errorState: errorState,
+      userState: userState,
+    );
+  }
+
+  Map<String, dynamic> toJson() => {
+    'errorState': this.errorState.toJson(),
+    'userState': this.userState.toJson(),
+  };
 }

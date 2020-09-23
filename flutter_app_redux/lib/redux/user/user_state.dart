@@ -27,4 +27,18 @@ class UserState {
         user: null
     );
   }
+
+  static UserState fromJson(Map<String, dynamic> json) {
+    User user = (json == null) ? null : User.fromJson(json["user"]);
+
+    return UserState(
+      isLoading: (json == null) ? false : json["isLoading"],
+      user: user,
+    );
+  }
+
+  Map<String, dynamic> toJson() => {
+    'isLoading': this.isLoading,
+    'user': this.user.toJson(),
+  };
 }

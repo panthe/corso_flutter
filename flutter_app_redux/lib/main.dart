@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_redux/helpers/my_json_serialize.dart';
 import 'package:flutter_app_redux/widgets/error_notifier.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
@@ -8,11 +9,25 @@ import 'package:flutter_app_redux/config/routes.dart';
 import 'package:flutter_app_redux/ui/home_page.dart';
 import 'package:flutter_app_redux/ui/splash_page.dart';
 import 'package:flutter_app_redux/redux/app/app_state.dart';
+import 'package:redux_persist/redux_persist.dart';
+import 'package:redux_persist_flutter/redux_persist_flutter.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  final Store<AppState> store = createStore();
+  final persistor = Persistor<AppState>(
+    storage: FlutterStorage(),
+    serializer: MyJsonSerializer<AppState>(AppState.fromJson),
+    debug: true,
+    throttleDuration: const Duration(seconds: 2)
+  );
+
+  final AppState initialState = await persistor.load();
+
+  final Store<AppState> store = createStore(
+    initialState: initialState,
+    persistor: persistor
+  );
 
   runApp(MyApp(store: store));
 }
