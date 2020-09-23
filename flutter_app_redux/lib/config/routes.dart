@@ -8,7 +8,6 @@ class Routes {
   static const String homeRoute = 'home';
   static const String splashRoute = 'splash';
   static const String secondRoute = 'second';
-  static const String compositeRoute = '/splash/home/second'; // TODO
 
   static Route onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {

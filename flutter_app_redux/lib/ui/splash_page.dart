@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_redux/config/keys.dart';
 import 'package:flutter_app_redux/config/routes.dart';
 
 class SplashPage extends StatefulWidget {
@@ -13,11 +14,8 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     super.initState();
     Future.delayed(
-      const Duration(seconds:8),
-        () => Navigator.pushReplacementNamed(
-        context,
-        Routes.homeRoute
-      )
+      const Duration(seconds:3),
+        () => navigatorKey.currentState.pushReplacementNamed(Routes.homeRoute)
     );
   }
 

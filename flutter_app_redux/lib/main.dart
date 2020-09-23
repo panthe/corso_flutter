@@ -6,8 +6,6 @@ import 'package:redux/redux.dart';
 import 'package:flutter_app_redux/redux/store.dart';
 import 'package:flutter_app_redux/config/keys.dart';
 import 'package:flutter_app_redux/config/routes.dart';
-import 'package:flutter_app_redux/ui/home_page.dart';
-import 'package:flutter_app_redux/ui/splash_page.dart';
 import 'package:flutter_app_redux/redux/app/app_state.dart';
 import 'package:redux_persist/redux_persist.dart';
 import 'package:redux_persist_flutter/redux_persist_flutter.dart';
@@ -62,13 +60,12 @@ class MyApp extends StatelessWidget {
               centerTitle: true,
               title: Text("Redux App"),
               actions: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).pop();
+                IconButton(
+                  icon: Icon(Icons.arrow_back),
+                  onPressed: () {
+                    if (navigatorKey.currentState.canPop())
+                      navigatorKey.currentState.pop();
                   },
-                  child: Icon(
-                    Icons.arrow_back
-                  )
                 )
               ]
             ),
