@@ -44,19 +44,34 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo Redux',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.blueGrey,
           visualDensity: VisualDensity.adaptivePlatformDensity,
           scaffoldBackgroundColor: Colors.transparent,
+          pageTransitionsTheme: PageTransitionsTheme(builders: {
+            TargetPlatform.iOS: ZoomPageTransitionsBuilder(),
+            TargetPlatform.android: ZoomPageTransitionsBuilder()
+          })
         ),
-        initialRoute: SplashRoute,
-        routes: {
-          HomeRoute: (context) => HomePage(),
-          SplashRoute: (context) => SplashPage(),
-        },
+        initialRoute: Routes.splashRoute,
+        onGenerateRoute: Routes.onGenerateRoute,
+        navigatorKey: navigatorKey,
         builder: (context, child) {
           return Scaffold(
             key: scaffoldKey,
-            appBar: null,
+            appBar: AppBar(
+              centerTitle: true,
+              title: Text("Redux App"),
+              actions: [
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Icon(
+                    Icons.arrow_back
+                  )
+                )
+              ]
+            ),
             body: SafeArea(
               child: ErrorNotifier(
                 child: child

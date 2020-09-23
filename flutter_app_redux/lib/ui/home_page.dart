@@ -69,6 +69,31 @@ class HomePage extends StatelessWidget {
                     color: Colors.yellow,
                     child: Text("Fetch User"),
                   )
+              ),
+              Container(
+                  height: 50.0,
+                  width: 100.0,
+                  margin: EdgeInsets.only(top: 25.0),
+                  child: MaterialButton(
+                    height: 36.0,
+                    minWidth: 80.0,
+                    padding: const EdgeInsets.all(5.0),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                        side: BorderSide(
+                            color: Colors.black,
+                            width: 2.0
+                        )
+                    ),
+                    onPressed: () => {
+                      Navigator.pushNamed(
+                        context,
+                        Routes.secondRoute
+                      )
+                    },
+                    color: Colors.yellow,
+                    child: Text("Second Page"),
+                  )
               )
             ],
           )

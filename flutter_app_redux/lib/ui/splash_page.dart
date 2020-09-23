@@ -16,7 +16,7 @@ class _SplashPageState extends State<SplashPage> {
       const Duration(seconds:8),
         () => Navigator.pushReplacementNamed(
         context,
-        HomeRoute
+        Routes.homeRoute
       )
     );
   }
