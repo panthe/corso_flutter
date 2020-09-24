@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_redux/config/navigation_observer.dart';
 import 'package:flutter_app_redux/helpers/my_json_serialize.dart';
+import 'package:flutter_app_redux/ui/splash_page.dart';
 import 'package:flutter_app_redux/widgets/error_notifier.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
@@ -33,6 +35,8 @@ void main() async {
 class MyApp extends StatelessWidget {
   final Store<AppState> store;
 
+  static final testNavigationObserver = TestNavigatorObserver();
+
   MyApp({this.store});
 
   @override
@@ -53,6 +57,7 @@ class MyApp extends StatelessWidget {
         initialRoute: Routes.splashRoute,
         onGenerateRoute: Routes.onGenerateRoute,
         navigatorKey: navigatorKey,
+        navigatorObservers: [testNavigationObserver],
         builder: (context, child) {
           return Scaffold(
             key: scaffoldKey,

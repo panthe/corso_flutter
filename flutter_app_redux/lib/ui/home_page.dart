@@ -70,34 +70,39 @@ class HomePage extends StatelessWidget {
                     child: Text("Fetch User"),
                   )
               ),
-              Container(
-                  height: 50.0,
-                  width: 100.0,
-                  margin: EdgeInsets.only(top: 25.0),
-                  child: MaterialButton(
-                    height: 36.0,
-                    minWidth: 80.0,
-                    padding: const EdgeInsets.all(5.0),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5.0),
-                        side: BorderSide(
-                            color: Colors.black,
-                            width: 2.0
-                        )
-                    ),
-                    onPressed: () => {
-                      Navigator.pushNamed(
-                        context,
-                        Routes.secondRoute
-                      )
-                    },
-                    color: Colors.yellow,
-                    child: Text("Second Page"),
-                  )
-              )
+              createButton(context: context, route: Routes.secondRoute, title: "Anim Page"),
+              createButton(context: context, route: Routes.formRoute, title: "Form Page"),
+              createButton(context: context, route: Routes.listRoute, title: "List Page"),
+              createButton(context: context, route: Routes.gridRoute, title: "Grid Page"),
+
             ],
           )
       )
+    );
+  }
+
+  Widget createButton({BuildContext context, String route, String title}) {
+    return Container(
+        height: 50.0,
+        width: 100.0,
+        margin: EdgeInsets.only(top: 25.0),
+        child: MaterialButton(
+          height: 36.0,
+          minWidth: 80.0,
+          padding: const EdgeInsets.all(5.0),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(5.0),
+              side: BorderSide(
+                  color: Colors.black,
+                  width: 2.0
+              )
+          ),
+          onPressed: () => {
+            navigatorKey.currentState.pushNamed(route)
+          },
+          color: Colors.yellow,
+          child: Text(title),
+        )
     );
   }
 
