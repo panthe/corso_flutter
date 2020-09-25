@@ -1,30 +1,27 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility that Flutter provides. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
+import 'package:flutter_app_redux/mock_data/user_mock_data.dart';
+import 'package:flutter_app_redux/widgets/user_card.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:flutter_app_redux/main.dart';
+import 'package:image_test_utils/image_test_utils.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(MyApp());
+  testWidgets('UserCard test', (WidgetTester tester) async {
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    await provideMockedNetworkImages(() async {
+      await tester.pumpWidget(MaterialApp(
+          home: UserCard(user: userMockData)
+        )
+      );
+    });
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    expect(find.text('Ms Louanne Durand'), findsOneWidget); // Full name
+    expect(find.widgetWithText(Column, 'Ms Louanne Durand'), findsOneWidget);
+    expect(find.widgetWithText(Column, 'female'), findsOneWidget);
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(find.byWidgetPredicate((widget) =>
+      widget is CircleAvatar && widget.backgroundColor == Colors.pink,
+      description: "Check background color"
+    ), findsOneWidget);
+
   });
 }

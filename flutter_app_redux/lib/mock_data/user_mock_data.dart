@@ -5,64 +5,64 @@ User userMockData = User.fromJson(json);
 var json = {
   "results": [
     {
-      "gender": "male",
+      "gender": "female",
       "name": {
-        "title": "Mr",
-        "first": "Andy",
-        "last": "Spencer"
+        "title": "Ms",
+        "first": "Louanne",
+        "last": "Durand"
       },
       "location": {
         "street": {
-          "number": 1820,
-          "name": "Sunset St"
+          "number": 9953,
+          "name": "Rue Duguesclin"
         },
-        "city": "Anchorage",
-        "state": "Louisiana",
-        "country": "United States",
-        "postcode": 66053,
+        "city": "Saint-Pierre",
+        "state": "Loire",
+        "country": "France",
+        "postcode": 95367,
         "coordinates": {
-          "latitude": "81.6570",
-          "longitude": "-43.8895"
+          "latitude": "-3.9163",
+          "longitude": "121.1641"
         },
         "timezone": {
-          "offset": "+10:00",
-          "description": "Eastern Australia, Guam, Vladivostok"
+          "offset": "+5:00",
+          "description": "Ekaterinburg, Islamabad, Karachi, Tashkent"
         }
       },
-      "email": "andy.spencer@example.com",
+      "email": "louanne.durand@example.com",
       "login": {
-        "uuid": "0df2c059-6f71-4cc3-ad8e-8afe08c16cfa",
-        "username": "orangetiger587",
-        "password": "starman",
-        "salt": "z7DeWXo7",
-        "md5": "3dd0c5a3f85e74e913e3f2bb734ed835",
-        "sha1": "aa871c612fbb96b0fe130062b3f19812acf8a75e",
-        "sha256": "b44d32cd1376dfecb12308b7bfda4a3c67be3468850f8aa08d5c73c9447104a6"
+        "uuid": "94cafdd8-ff16-409a-ae80-2fb26f225cf4",
+        "username": "angrydog997",
+        "password": "krystal",
+        "salt": "7fxbJNA5",
+        "md5": "a4b9a942e2836f7cd3966161bc2935b5",
+        "sha1": "74f7da3782e2a21ce73e5d1c4b3373c72502e2b4",
+        "sha256": "992971f225f6f072aacee4810fd7e2a14bd60c7a20a9ec2f90cbeb99c300c28d"
       },
       "dob": {
-        "date": "1979-10-15T16:09:32.961Z",
-        "age": 41
+        "date": "1982-11-03T04:21:33.963Z",
+        "age": 38
       },
       "registered": {
-        "date": "2018-11-23T07:44:52.684Z",
-        "age": 2
+        "date": "2004-10-12T06:42:06.308Z",
+        "age": 16
       },
-      "phone": "(057)-047-9613",
-      "cell": "(731)-874-8171",
+      "phone": "05-11-37-92-73",
+      "cell": "06-34-49-21-65",
       "id": {
-        "name": "SSN",
-        "value": "235-19-4213"
+        "name": "INSEE",
+        "value": "2NNaN74483933 01"
       },
       "picture": {
-        "large": "https://randomuser.me/api/portraits/men/87.jpg",
-        "medium": "https://randomuser.me/api/portraits/med/men/87.jpg",
-        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/87.jpg"
+        "large": "https://randomuser.me/api/portraits/women/37.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/37.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/37.jpg"
       },
-      "nat": "US"
+      "nat": "FR"
     }
   ],
   "info": {
-    "seed": "d26f9a42019b9735",
+    "seed": "7dad8b264152d913",
     "results": 1,
     "page": 1,
     "version": "1.3"
